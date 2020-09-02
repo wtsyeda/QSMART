@@ -1,4 +1,4 @@
-function QSMART(datapath,params,path_out)
+function QSMART(path_mag,path_pha,params,path_out)
 
 params.ppm= (params.gyro*params.field)/1e6; %ppm multiplier
 
@@ -8,12 +8,12 @@ mkdir(params.path_qsm); %creates the folder
 cd(params.path_qsm); %goes to the new created folder
 
 % read in DICOMs of both uncombined magnitude and raw unfiltered phase images
-[mag_all,ph_all,params]= readComplexData(datapath,params);
+[mag_all,ph_all,params.iminfo]= readComplexDicoms(path_mag,path_pha);
 
 % initial quick brain mask
-mask = genBrainmask(mag_all,params.species,params);
+mask=brainmask(data,params);
 
-% % coil combination % smoothing factor 10?
+% coil combination
 [ph_corr,mag_corr]=coil_comb(mag_all,ph_all,params.iminfo.resolution,params.iminfo.echo_times,mask,params.phase_encoding,params.coilcombmethod);
 
 % Generating mask of vasculature
@@ -24,7 +24,7 @@ unph=unwrap_phase(ph_corr,mask,params.iminfo.resolution, params.ph_unwrap_method
 
 % Echo fit - fit phase images with echo times
 disp('--> magnitude weighted LS fit of phase to TE ...');
-[tfs,R_0] = myechofit(unph,mag_corr,0,params);
+[tfs,R_0] = echofit(unph,mag_corr,0,params);
 
 % cleaning the total field shift to find local field shift
 lfs_sdf = QSMART_SDF(tfs,mask,R_0,[],1,params);
@@ -46,11 +46,6 @@ adjust_offset(mask.*R_0 - vasc_only,lfs_sdf,chi_iLSQR_1,chi_iLSQR_2,params);
 % Resharp for comparison
 if params.resharp.doResharp
     resharp_chi(tfs,mask.*R_0,params);
-end
-
-%T2start estimation
-if params.T2star.calcT2star
-    calc_T2star(mag_corr,mask,params.iminfo.echo_times,params.iminfo.resolution,params.T2star.bg_roi);
 end
     
  disp('--- Process Finished ---');

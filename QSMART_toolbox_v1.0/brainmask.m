@@ -1,4 +1,4 @@
-function mask=brainmask_human(mag_all,params)
+function mask=brainmask(mag_all,params)
 
 vox = params.iminfo.resolution;
 

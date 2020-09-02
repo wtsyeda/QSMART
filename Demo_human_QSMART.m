@@ -10,7 +10,8 @@ addpath(genpath('./QSMART_toolbox'));
 
 %%% Defining data paths and string IDs%%%
   
-complex_datapath='/home/wtsyeda/am35_scratch/Warda/QSMART_240420/Data/Human/raw_data/';
+datapath_mag='/home/wtsyeda/am35_scratch/Warda/QSMART_240420/Data/Human/raw_data/';
+datapath_pha='';
 out_path='/scratch/am35/Warda/QSMART_240420/QSM_out/';
 % Path to utility code
 qsm_params.mexEig3volume=which('eig3volume.c');
@@ -23,12 +24,6 @@ qsm_params.field=7;                       % Tesla
 qsm_params.gyro=2.675e8;                  % Proton gyromagnetic ratio  
 qsm_params.datatype='DICOM_Siemens';      % options: DICOM_Siemens, BRUKER, 'AAR_Siemens', 'ZIP_Siemens'
 qsm_params.phase_encoding='unipolar';     % 'unipolar' or 'bipolar'
-
-% Brain mask method
-qsm_params.genMask=1;  % Set to 0 if providing mask
-qsm_params.fovMask=0;  % Set to 1 if QSM over entire FOV
-qsm_params.niftiMask=0; % Set this parameter if providing external mask, provide mask as a nifit file
-qsm_params.allMasksPath=''; % Set this parameter if providing external mask, place all masks in a separate folder with sufolder name same as data subfolder
 
 % Phase unwrapping 
 qsm_params.ph_unwrap_method='laplacian';    %options: 'laplacian','bestpath'
@@ -72,37 +67,7 @@ qsm_params.smth_thres_percentile = 100;                % iLSQR-smoothing high-su
 % Data output
 qsm_params.save_raw_data=0;
 
-%%% Main loop to read in data and masks and peform QSM analysis on each 
-%%% subject.
+% QSMART 
+QSMART(datapath_mag,datapath_pha,qsm_params,session_outpath);    
+    
 
-% Determining total number of datasets to process
-
-folder_names = getFolderNames(complex_datapath);
-n_folders = length(folder_names);
-
-for iFile = 1:n_folders
-    
-    foldername=folder_names{iFile};
-    
-    fprintf('Processing folder: %s ...\n',foldername);
-    
-    session_datapath=sprintf('%s/%s',complex_datapath,foldername);
-    
-    session_outpath=sprintf('%s%s/',out_path,foldername); mkdir(session_outpath);
-    
-    
-    if qsm_params.niftiMask
-    
-        % Loading mask
-    
-        mask_file=getFileNames(sprintf('%s%s/',qsm_params.allMasksPath,foldername));
-    
-        qsm_params.maskPath=sprintf('%s%s/%s',qsm_params.allMasksPath,foldername,mask_file{1});
-    
-        qsm_params.genMask=0; qsm_params.fovMask=0; 
-
-    end
-    
-    QSMART(session_datapath,qsm_params,session_outpath);    
-    
-end

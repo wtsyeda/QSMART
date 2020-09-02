@@ -1,4 +1,4 @@
-function [tfs,R_0] = myechofit(ph, mag, inter,params)
+function [tfs,R_0] = echofit(ph, mag, inter,params)
 %ECHOFIT Magnitude-weighted least square regression of phase to echo time.
 %   [TFS,RES, OFF, R_0] = echofit(PH,MAG,TE,INTER) fits the phases with TEs, weighted by
 %   magnitudes and force inters to zeros
