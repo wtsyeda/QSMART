@@ -4,3 +4,10 @@
 **/background_field_removal/
 **/phase_unwrapping/
 **/out/
+**/eig3volume.c
+**/coil_comb.m
+**/geme_cmb.m
+**/FrangiFilter3D.m
+**/Hessian3D.m
+**/imgaussian.*
+**/  

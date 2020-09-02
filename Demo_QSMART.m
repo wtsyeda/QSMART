@@ -6,13 +6,13 @@ clc; clear all; close all
 % at the Melbourne Brain Centre Imaging Unit.                       %
 %                                                                   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-addpath(genpath('./QSMART_toolbox'));
+addpath(genpath('./QSMART_toolbox_v1.0'));
 
 %%% Defining data paths and string IDs%%%
   
-datapath_mag='../Data/03_JK/neutral/1.10.1/1.10.1.432/1.10.1.432.1.1/1.10.1.432.1.1.53/dicom_series/';
-datapath_pha='../Data/03_JK/neutral/1.10.1/1.10.1.432/1.10.1.432.1.1/1.10.1.432.1.1.54/dicom_series';
-out_path='/scratch/am35/Warda/QSMART_240420/QSM_out/';
+datapath_mag='/scratch/cj97/Warda/QSMART_git/Data/03_JK/neutral/1.10.1/1.10.1.432/1.10.1.432.1.1/1.10.1.432.1.1.53/dicom_series/';
+datapath_pha='/scratch/cj97/Warda/QSMART_git/Data/03_JK/neutral/1.10.1/1.10.1.432/1.10.1.432.1.1/1.10.1.432.1.1.54/dicom_series/';
+out_path='/out/QSM_out/';
 % Path to utility code
 qsm_params.mexEig3volume=which('eig3volume.c');
 
@@ -25,6 +25,9 @@ qsm_params.gyro=2.675e8;                  % Proton gyromagnetic ratio
 qsm_params.datatype='DICOM_Siemens';      % options: DICOM_Siemens, BRUKER, 'AAR_Siemens', 'ZIP_Siemens'
 qsm_params.phase_encoding='unipolar';     % 'unipolar' or 'bipolar'
 
+% Coil combination
+qsm_params.coilcombmethod='smooth3';  % options: s(1) smooth3, (2) poly3, (3) poly3_nlcg
+
 % Phase unwrapping 
 qsm_params.ph_unwrap_method='laplacian';    %options: 'laplacian','bestpath'
 
@@ -32,6 +35,7 @@ qsm_params.ph_unwrap_method='laplacian';    %options: 'laplacian','bestpath'
 qsm_params.mag_threshold=100;
 qsm_params.sph_radius1=2;
 qsm_params.sph_radius_vasculature = 8;
+qsm_params.adaptive_threshold=0;
 
 % Frangi filter parameters
 qsm_params.frangi_scaleRange=[0.5 6];
@@ -68,6 +72,6 @@ qsm_params.smth_thres_percentile = 100;                % iLSQR-smoothing high-su
 qsm_params.save_raw_data=0;
 
 % QSMART 
-QSMART(datapath_mag,datapath_pha,qsm_params,session_outpath);    
+QSMART(datapath_mag,datapath_pha,qsm_params,out_path);    
     
 
