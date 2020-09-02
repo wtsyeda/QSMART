@@ -4,6 +4,7 @@
 **/background_field_removal/
 **/phase_unwrapping/
 **/out/
+**/External_functions/
 **/eig3volume.c
 **/coil_comb.m
 **/geme_cmb.m
