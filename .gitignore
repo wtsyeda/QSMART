@@ -1,14 +1,3 @@
-**/Nifti/
 **/Data/
-**/STI_Suite_v2.2/
-**/background_field_removal/
-**/phase_unwrapping/
 **/out/
 **/External_functions/
-**/eig3volume.c
-**/coil_comb.m
-**/geme_cmb.m
-**/FrangiFilter3D.m
-**/Hessian3D.m
-**/imgaussian.*
-**/  
