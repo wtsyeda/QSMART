@@ -12,7 +12,7 @@ addpath(genpath('./QSMART_toolbox_v1.0'));
   
 datapath_mag='/scratch/cj97/Warda/QSMART_git/Data/03_JK/neutral/1.10.1/1.10.1.432/1.10.1.432.1.1/1.10.1.432.1.1.53/dicom_series/';
 datapath_pha='/scratch/cj97/Warda/QSMART_git/Data/03_JK/neutral/1.10.1/1.10.1.432/1.10.1.432.1.1/1.10.1.432.1.1.54/dicom_series/';
-out_path='/out/QSM_out/';
+out_path='./out/QSM_out/';
 % Path to utility code
 qsm_params.mexEig3volume=which('eig3volume.c');
 
