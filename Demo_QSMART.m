@@ -12,7 +12,7 @@ addpath(genpath('./QSMART_toolbox_v1.0'));
   
 datapath_mag='/scratch/cj97/Warda/QSMART_git/Data/03_JK/neutral/1.10.1/1.10.1.432/1.10.1.432.1.1/1.10.1.432.1.1.53/dicom_series/';
 datapath_pha='/scratch/cj97/Warda/QSMART_git/Data/03_JK/neutral/1.10.1/1.10.1.432/1.10.1.432.1.1/1.10.1.432.1.1.54/dicom_series/';
-out_path='./out/QSM_out/';
+out_path='./out/QSM_out_2/';
 % Path to utility code
 qsm_params.mexEig3volume=which('eig3volume.c');
 
@@ -53,6 +53,9 @@ qsm_params.s1.sdf_sigma1=10;
 qsm_params.s1.sdf_sigma2=0;
 qsm_params.s2.sdf_sigma1=8;
 qsm_params.s2.sdf_sigma2=2;
+
+qsm_params.indent.scale=6;
+qsm_params.indent.sigma=[10 10 20];
 
 % RESHARP Parameters
 qsm_params.resharp.smv_rad = 1;
