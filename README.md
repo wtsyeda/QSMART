@@ -26,7 +26,7 @@ The script *Demo_QSMART.m* calls the main *QSMART* function and contains a descr
 
 ### QSMART Reconstruction pipeline
 * Load complex image data from DICOMS (Magnitude and phase images)
-* Inital brain mask using FSL's BET
+* Inital brain mask using [FSL's BET](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/BET/UserGuide)
 * Coil combination using [POEM multi-channel coil combination method](https://github.com/sunhongfu/QSM)
 * Vasculature mask using Frangi filters and indent mask
 * Phase unwrapping
