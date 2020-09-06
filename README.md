@@ -33,7 +33,7 @@ The script *Demo_QSMART.m* calls the main *QSMART* function and contains a descr
 * **Stage 1:** Background field removal using spatial dependent filtering
 * Field-to-source inversion using [iLSQR](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4406048/)
 * **Stage 2:** Background field removal using spatial dependent filtering, vasculature mask and indent mask, followed by iLSQR inversion
-* combined QSMART susceptibility map from stages 1&2
+* Combined QSMART susceptibility map from stages 1&2
 
 ![Overview of QSMART pipeline](/images/QSMART_schematic.png)  
 **Figure 1:** Overview of the QSMART field-to-source inversion step; background field removal and inversion are carried out in two parallel stages, once on the whole ROI and once on the tissue region only (vasculature omitted). The two QSM maps are combined to form the final QSM map (QSMART).
@@ -45,7 +45,7 @@ The script *Demo_QSMART.m* calls the main *QSMART* function and contains a descr
 QSMART uses helper codes from following references:
 
 * Dirk-Jan Kroon (2020). Hessian based Frangi Vesselness filter (https://www.mathworks.com/matlabcentral/fileexchange/24409-hessian-based-frangi-vesselness-filter), MATLAB Central File Exchange. Retrieved September 6, 2020.
-* H. Sun, J.O. Cleary, R. Glarin, S.C. Kolbe, R.J. Ordidge, B.A. Moffat, G.B. Pike; Extracting more for less: Multi-echo MP2RAGE for simultaneous T1-weighted imaging, T1 mapping, R2* mapping, SWI, and QSM from a single acquisition.
+* H. Sun, J.O. Cleary, R. Glarin, S.C. Kolbe, R.J. Ordidge, B.A. Moffat, G.B. Pike, *Extracting more for less: Multi-echo MP2RAGE for simultaneous T1-weighted imaging, T1 mapping, R2* mapping, SWI, and QSM from a single acquisition.*
 
 
 
