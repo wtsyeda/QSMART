@@ -38,7 +38,7 @@ Additionally, please install these software on your system.
 
 ## References
 
-**QSMART Reference:** Yaghmaie, N., W. Syeda, C. Wu, Y. Zhang, T. Zhang, E.L. Burrows, B.A. Moffat, D.K. Wright, R. Glarin, S. Kolbe, L.A. Johnston, QSMART: Quantitative Susceptibility Mapping Artifact Reduction Technique, 2020.
+**QSMART Reference:** Yaghmaie, N., W. Syeda, C. Wu, Y. Zhang, T. Zhang, E.L. Burrows, B.A. Moffat, D.K. Wright, R. Glarin, S. Kolbe, L.A. Johnston, *QSMART: Quantitative Susceptibility Mapping Artifact Reduction Technique*, 2020.
 
 QSMART uses helper codes from following references:
 
