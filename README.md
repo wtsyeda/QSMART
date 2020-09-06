@@ -6,10 +6,12 @@ QSMART reconstructs tissue bulk magnetic susceptibility from complex MRI images.
 
 1. Download QSMART repository 
 2. Install Dependencies
-To install QSMART, a number of dependencies need to be available on your system, as listed below. These depedencies can be placed directly in the folder *'QSMART_toolbox_v1.0'*.
+To install QSMART, a number of dependencies need to be available on your system, as listed below. These depedencies can be added to the MATLAB path or placed directly in the folder *'QSMART_toolbox_v1.0'*.
+
+Required dependencies
+1. [Frangi filter](https://au.mathworks.com/matlabcentral/fileexchange/24409-hessian-based-frangi-vesselness-filter) 
 
 ![Overview of QSMART pipeline](/images/QSMART_schematic.png)
-Format: ![Alt Text](url)
 
 ## References
 
