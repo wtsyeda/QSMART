@@ -1,6 +1,9 @@
 # QSMART: Quantitative Susceptibility Mapping Artifact Reduction Technique
 
-QSMART reconstructs tissue bulk magnetic susceptibility from complex MRI images. 
+QSMART reconstructs tissue bulk magnetic susceptibility from complex MRI images.\\ 
+* QSMART is a two-stage QSM inversion pipeline that suppresses artifacts and the streaking artifacts near veins.
+* Spatially dependent filtering is applied to a combined cortical surface and vasculature mask as part of the QSMART pipeline, eliminating the need for the cortical erosion step of SHARP-based methods.
+* QSMART shows superior artifact suppression on 7T human and 9.4T preclinical data compared to the previous methods.
 
 ## Installing QSMART
 
@@ -12,12 +15,30 @@ Required dependencies:
 2. [STI suite v2.2](https://people.eecs.berkeley.edu/~chunlei.liu/software.html)
 3. Code for [phase unwrapping](https://github.com/sunhongfu/QSM/tree/master/phase_unwrapping)
 4. [Nifti tools](https://au.mathworks.com/matlabcentral/fileexchange/8797-tools-for-nifti-and-analyze-image)
+5. [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation)
+6. [Advanced Normalization Tools (ANTs)](http://stnava.github.io/ANTs/)
 
 ## Usage
+
+### QSMART Reconstruction pipeline
+* Load complex image data from DICOMS (Magnitude and phase images)
+* Inital brain mask using FSL's BET, vasculature mask using Frangi filters and indent mask
+* Coil combination using [POEM multi-channel coil combination method](https://github.com/sunhongfu/QSM)
+* Phase unwrapping
+* Echo-fitting
+* **Stage 1:** Background field removal using spatial dependent filtering
+* Field-to-source inversion using [iLSQR](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4406048/)
+* **Stage 2:** Background field removal using spatial dependent filtering, vasculature mask and indent mask, followed by iLSQR inversion
+* combined QSMART susceptibility map from stages 1&2
+
+
+
+
 
 
 
 ![Overview of QSMART pipeline](/images/QSMART_schematic.png)
+Figure 1: Overview of the QSMART field-to-source inversion step; background field removal and inversion are carried out in two parallel stages, once on the whole ROI and once on the tissue region only (vasculature omitted). The two QSM maps are combined to form the final QSM map (QSMART).
 
 ## References
 
