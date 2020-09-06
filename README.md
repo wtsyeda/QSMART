@@ -33,14 +33,8 @@ Additionally, please install these software on your system.
 * **Stage 2:** Background field removal using spatial dependent filtering, vasculature mask and indent mask, followed by iLSQR inversion
 * combined QSMART susceptibility map from stages 1&2
 
-
-
-
-
-
-
 ![Overview of QSMART pipeline](/images/QSMART_schematic.png)  
-Figure 1: Overview of the QSMART field-to-source inversion step; background field removal and inversion are carried out in two parallel stages, once on the whole ROI and once on the tissue region only (vasculature omitted). The two QSM maps are combined to form the final QSM map (QSMART).
+**Figure 1:** Overview of the QSMART field-to-source inversion step; background field removal and inversion are carried out in two parallel stages, once on the whole ROI and once on the tissue region only (vasculature omitted). The two QSM maps are combined to form the final QSM map (QSMART).
 
 ## References
 
