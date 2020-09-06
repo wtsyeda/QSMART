@@ -22,6 +22,8 @@ Additionally, please install these software on your system.
 
 ## Usage
 
+The script *Demo_QSMART.m* calls the main 'QSMART' function and contains a description of user-specified parameters. The parameter settings have been optimized for Siemens 7T MRI scanner. To run *Demo_QSMART.m* on your data, please specifiy paths to phase and magnitude DICOM folders.
+
 ### QSMART Reconstruction pipeline
 * Load complex image data from DICOMS (Magnitude and phase images)
 * Inital brain mask using FSL's BET, vasculature mask using Frangi filters and indent mask
