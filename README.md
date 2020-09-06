@@ -15,8 +15,10 @@ Required dependencies:
 2. [STI suite v2.2](https://people.eecs.berkeley.edu/~chunlei.liu/software.html)
 3. Code for [phase unwrapping](https://github.com/sunhongfu/QSM/tree/master/phase_unwrapping)
 4. [Nifti tools](https://au.mathworks.com/matlabcentral/fileexchange/8797-tools-for-nifti-and-analyze-image)
-5. [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation)
-6. [Advanced Normalization Tools (ANTs)](http://stnava.github.io/ANTs/)
+
+Additionally, please install these software on your system.
+* [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation)
+* [Advanced Normalization Tools (ANTs)](http://stnava.github.io/ANTs/)
 
 ## Usage
 
