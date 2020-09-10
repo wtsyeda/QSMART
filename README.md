@@ -24,7 +24,7 @@ Additionally, please install the latest version of these software on your system
 
 The script *Demo_QSMART.m* calls the main *QSMART* function and contains a description of user-specified parameters. The parameter settings have been optimized for multiecho gradient echo data from Siemens 7T MRI scanner. To run *Demo_QSMART.m* on your data, please specifiy paths to phase and magnitude DICOM folders, and adjust parameters as needed.
 
-### QSMART Reconstruction pipeline
+### QSMART Estimation Pipeline
 * Load complex image data from DICOMS (Magnitude and phase images)
 * Inital brain mask using [FSL's BET](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/BET/UserGuide)
 * Coil combination using [POEM multi-channel coil combination method](https://github.com/sunhongfu/QSM)
