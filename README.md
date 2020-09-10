@@ -1,6 +1,6 @@
 # QSMART: Quantitative Susceptibility Mapping Artifact Reduction Technique
 
-QSMART reconstructs tissue bulk magnetic susceptibility maps from complex MRI images.
+QSMART estimates tissue bulk magnetic susceptibility maps from complex MRI images.
 * QSMART is a two-stage QSM inversion pipeline that suppresses artifacts and the streaking artifacts near veins (Figure 1).
 * Spatially dependent filtering is applied to a combined cortical surface and vasculature mask as part of the QSMART pipeline, eliminating the need for the cortical erosion step of SHARP-based methods.
 * QSMART shows superior artifact suppression on 7T human and 9.4T preclinical data compared to the previous methods.
