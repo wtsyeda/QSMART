@@ -15,7 +15,7 @@ Required dependencies:
 2. [STI suite v2.2](https://people.eecs.berkeley.edu/~chunlei.liu/software.html)
 3. Code for [phase unwrapping](https://github.com/sunhongfu/QSM/tree/master/phase_unwrapping)
 4. [Nifti tools](https://au.mathworks.com/matlabcentral/fileexchange/8797-tools-for-nifti-and-analyze-image)
-5. Code for calculating [gaussian curvature] (https://www.mathworks.com/matlabcentral/fileexchange/61136-gaussian-and-mean-curvatures-calculation-on-a-triangulated-3d-surface)
+5. Code for calculating [gaussian curvature](https://www.mathworks.com/matlabcentral/fileexchange/61136-gaussian-and-mean-curvatures-calculation-on-a-triangulated-3d-surface)
 
 Additionally, please install the latest version of these software on your system.
 * [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation)
