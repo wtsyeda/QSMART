@@ -15,6 +15,7 @@ Required dependencies:
 2. [STI suite v2.2](https://people.eecs.berkeley.edu/~chunlei.liu/software.html)
 3. Code for [phase unwrapping](https://github.com/sunhongfu/QSM/tree/master/phase_unwrapping)
 4. [Nifti tools](https://au.mathworks.com/matlabcentral/fileexchange/8797-tools-for-nifti-and-analyze-image)
+5. Code for calculating gaussian curvature ((https://www.mathworks.com/matlabcentral/fileexchange/61136-gaussian-and-mean-curvatures-calculation-on-a-triangulated-3d-surface)
 
 Additionally, please install the latest version of these software on your system.
 * [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation)
@@ -28,7 +29,7 @@ The script *Demo_QSMART.m* calls the main *QSMART* function and contains a descr
 * Load complex image data from DICOMS (Magnitude and phase images)
 * Inital brain mask using [FSL's BET](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/BET/UserGuide)
 * Coil combination using [POEM multi-channel coil combination method](https://github.com/sunhongfu/QSM)
-* Vasculature mask using Frangi filters and indent mask
+* Vasculature mask using Frangi filters and curvature-based indent mask
 * Phase unwrapping
 * Echo-fitting
 * **Stage 1:** Background field removal using spatial dependent filtering
@@ -46,6 +47,9 @@ The script *Demo_QSMART.m* calls the main *QSMART* function and contains a descr
 QSMART uses helper codes from following references:
 
 * Dirk-Jan Kroon (2020). Hessian based Frangi Vesselness filter (https://www.mathworks.com/matlabcentral/fileexchange/24409-hessian-based-frangi-vesselness-filter), MATLAB Central File Exchange. Retrieved September 6, 2020.
+*  Alireza Dastan (2020). Gaussian and mean curvatures calculation on a triangulated 3d surface 
+% (https://www.mathworks.com/matlabcentral/fileexchange/61136-gaussian-and-mean-curvatures-calculation-on-a-triangulated-3d-surface), 
+% MATLAB Central File Exchange. Retrieved October 23, 2020.
 * H. Sun, J.O. Cleary, R. Glarin, S.C. Kolbe, R.J. Ordidge, B.A. Moffat, G.B. Pike, *Extracting more for less: Multi-echo MP2RAGE for simultaneous T1-weighted imaging, T1 mapping, R2* mapping, SWI, and QSM from a single acquisition.*
 
 
