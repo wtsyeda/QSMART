@@ -10,9 +10,9 @@ addpath(genpath('./QSMART_toolbox_v1.0'));
 
 %%% Defining data paths and string IDs%%%
   
-datapath_mag='/home/wtsyeda/cj97_scratch/Warda/QSMART_git/Data/03_JK/neutral/1.10.1/1.10.1.432/1.10.1.432.1.1/1.10.1.432.1.1.53/';
-datapath_pha='/home/wtsyeda/cj97_scratch/Warda/QSMART_git/Data/03_JK/neutral/1.10.1/1.10.1.432/1.10.1.432.1.1/1.10.1.432.1.1.54/';
-out_path='./QSM_out_3/';
+datapath_mag='';
+datapath_pha='';
+out_path='./QSMART_out/';
 % Path to utility code
 qsm_params.mexEig3volume=which('eig3volume.c');
 
