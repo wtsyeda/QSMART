@@ -5,6 +5,10 @@ function prox=calculate_curvature(mask, prox1, lowerLim, curvConstant, sigma,vox
 % INPUTS: 
 % mask: The mask of the brain (3D binary image)
 % prox1: The initial proximity map without curvature adjustment
+% lowerLim: The clamping value for the proximity map before edge-refinement
+% curvConstatn: The scaling constant for the curvature values
+% sigma: kernel size for the 3D Gaussian filter
+% vox: Voxel size (mm^3)
 % OUTPUTS:
 % prox
 % Author: Warda Syeda, Melbourne Neuropsychiatry Centre, The University of
